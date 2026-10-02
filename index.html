@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AstroBitácora: una experiencia visual para explorar objetos del cielo profundo.">
+  <title>AstroBitácora | Exploración del cielo profundo</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Intencional para la práctica: este script NO usa defer. -->
+  <script src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="AstroBitácora, ir al inicio">
+      <span class="brand__mark" aria-hidden="true">✦</span>
+      <span>AstroBitácora</span>
+    </a>
+
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">
+      Menú
+    </button>
+
+    <nav class="nav" id="main-nav" aria-label="Navegación principal">
+      <a href="#archivo">Archivo</a>
+      <a href="#observatorio">Observatorio</a>
+      <a href="#mision">Misión</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- Intencional para la práctica: JPEG grande, sin width/height y sin formato moderno. -->
+      <img class="hero__image" src="https://res.cloudinary.com/dkeu1rgrm/image/upload/v1789676499/hero-cosmos_11zon_uqgf6b.jpg" alt="Campo estelar con una nebulosa azul y violeta">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <p class="eyebrow">Diario de observación · Edición 07</p>
+        <h1 id="hero-title">Mirar más lejos también cuesta <em>bytes</em>.</h1>
+        <p class="hero__lead">Una bitácora visual sobre galaxias, nebulosas y mundos distantes. Explora el archivo y prepara tu propia auditoría del sitio.</p>
+        <a class="button" href="#archivo">Explorar el archivo</a>
+      </div>
+      <div class="hero__metric" aria-label="Dato destacado">
+        <strong>13.8B</strong>
+        <span>años de historia cósmica</span>
+      </div>
+    </section>
+
+    <section class="intro" id="mision">
+      <div>
+        <p class="eyebrow">Misión</p>
+        <h2>Un archivo para aprender a observar… y a medir.</h2>
+      </div>
+      <p>Este sitio reúne imágenes de alta resolución para construir una experiencia inmersiva. El reto consiste en publicar esta versión inicial, medir su desempeño y decidir qué optimizaciones tienen mayor impacto sin perder su intención visual.</p>
+    </section>
+
+    <section class="archive" id="archivo" aria-labelledby="archive-title">
+      <div class="section-heading">
+        <p class="eyebrow">Archivo celeste</p>
+        <h2 id="archive-title">Cinco ventanas al universo</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card card--wide">
+          <img src="https://res.cloudinary.com/dkeu1rgrm/image/upload/v1789673889/andromeda_yw826t.jpg" alt="Representación artística de una galaxia espiral">
+          <div class="card__body">
+            <span class="tag">Galaxia</span>
+            <h3>Andrómeda</h3>
+            <p>Una vecina cósmica convertida en una composición de estrellas, polvo y contraste.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://res.cloudinary.com/dkeu1rgrm/image/upload/v1789673891/orion_kfemi7.jpg" alt="Nebulosa luminosa entre estrellas">
+          <div class="card__body">
+            <span class="tag">Nebulosa</span>
+            <h3>Región de Orión</h3>
+            <p>Nubes de gas iluminadas por estrellas jóvenes y calientes.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://res.cloudinary.com/dkeu1rgrm/image/upload/v1789673886/lunar-horizon_cu8glp.jpg" alt="Planeta suspendido sobre un fondo de estrellas">
+          <div class="card__body">
+            <span class="tag">Sistema local</span>
+            <h3>Horizonte lunar</h3>
+            <p>Una escena tranquila para estudiar luz, sombra y profundidad.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://res.cloudinary.com/dkeu1rgrm/image/upload/v1789673893/exoplanet_njwv79.jpg" alt="Exoplaneta iluminado por una estrella distante">
+          <div class="card__body">
+            <span class="tag">Exoplaneta</span>
+            <h3>Mundo 51-b</h3>
+            <p>Un planeta imaginado a partir de atmósferas, color y señales lejanas.</p>
+          </div>
+        </article>
+
+        <article class="card card--wide">
+          <img src="https://res.cloudinary.com/dkeu1rgrm/image/upload/v1789673886/deep-field_grr0me.jpg" alt="Campo profundo repleto de estrellas y galaxias">
+          <div class="card__body">
+            <span class="tag">Campo profundo</span>
+            <h3>La noche más antigua</h3>
+            <p>Un mosaico visual que invita a pensar en escalas que superan cualquier mapa terrestre.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="observatory" id="observatorio">
+      <div class="observatory__content">
+        <p class="eyebrow">Observatorio</p>
+        <h2>Registra una observación</h2>
+        <p>Usa este pequeño control para marcar una observación local. El JavaScript es mínimo; el foco de la práctica está en la carga del sitio.</p>
+        <button class="button button--secondary" id="observe-button" type="button">Registrar observación</button>
+        <p class="counter" aria-live="polite">Observaciones de esta sesión: <strong id="observation-count">0</strong></p>
+      </div>
+      <blockquote>
+        “La optimización no consiste en quitar todo. Consiste en decidir qué vale la pena cargar.”
+      </blockquote>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>AstroBitácora · Laboratorio de desempeño web</p>
+    <p>© <span id="year">2026</span></p>
+  </footer>
+</body>
+</html>
